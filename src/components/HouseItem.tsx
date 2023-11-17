@@ -4,8 +4,10 @@ import walkImg from '../assets/walk.svg';
 import floorImg from '../assets/floors.png';
 import roomsImg from '../assets/rooms.svg';
 import areaImg from '../assets/area.png';
+import favoritesImg from '../assets/favorites.svg';
 
 type Props = {
+  id: number;
   imageURL: string;
   price: number;
   floor: string;
@@ -16,6 +18,7 @@ type Props = {
 };
 
 const HouseItem: React.FC<Props> = ({
+  id,
   imageURL,
   price,
   floor,
@@ -24,14 +27,33 @@ const HouseItem: React.FC<Props> = ({
   wayToSubway,
   area,
 }) => {
+  const priceFormaterFunction = (price: number): any => {
+    const stringPrice = String(price);
+    const formatedPrice =
+      stringPrice.length === 6
+        ? stringPrice.substring(0, 3) + ' ' + stringPrice.substring(stringPrice.length - 3)
+        : '';
+    return formatedPrice;
+  };
+
+  const addToFavoritesFunc = (id: number): void => {
+    console.log(id);
+  };
+
   return (
     <div className="mt-6 mr-6 border-2 border-gray-350 rounded-xl cursor-pointer">
-      <div>
-        <img className="rounded-t-xl max-h-60 w-full" src={imageURL} alt="" />
+      <div className="relative">
+        <img className="rounded-t-xl max-h-60 w-full" src={imageURL} alt="" />{' '}
+        <div
+          className="bg-slate-100 w-9 h-9 rounded-full flex justify-center items-center absolute top-3 right-3"
+          onClick={() => addToFavoritesFunc(id)}>
+          <img className="w-5" src={favoritesImg} alt="" />
+        </div>
       </div>
+
       <div className="p-4">
         <div className="pb-4 font-medium">
-          <p className="text-lg">{price} AZN</p>
+          <p className="text-lg">{priceFormaterFunction(price)} AZN</p>
         </div>
         <div className="flex h-7 relative">
           <img className="w-6 h-3 align-middle absolute top-1.5 mr-2" src={subway} alt="" />

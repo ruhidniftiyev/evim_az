@@ -6,7 +6,6 @@ type Props = {};
 
 const HouseList = (props: Props) => {
   const { data: houses } = houseAPI.useFetchAllHousesQuery('');
-  //   console.log(houses);
 
   return (
     <div className="grid grid-cols-4 gap-4">

@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react';
-import HouseList from './components/HouseList';
-import Header from './components/Header';
-import Footer from './components/Footer';
+import Home from './pages/Home';
 
 function App() {
   useEffect(() => {
@@ -13,9 +11,7 @@ function App() {
   return (
     // <div className="w-11/12 m-auto p-3">
     <div>
-      <Header />
-      <HouseList />
-      <Footer />
+      <Home />
     </div>
   );
 }

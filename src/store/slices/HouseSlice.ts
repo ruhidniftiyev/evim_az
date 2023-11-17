@@ -1,15 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialStore = {};
+const initialStore = {
+  favorites: [],
+};
 
 const houseSlice = createSlice({
   name: 'house',
   initialState: initialStore,
-  reducers: {
-    add: () => 1 + 1,
-  },
+  reducers: {},
 });
 
 export default houseSlice.reducer;
 
-export const { add } = houseSlice.actions;
+export const {} = houseSlice.actions;
