@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import HouseList from './components/HouseList';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   useEffect(() => {
@@ -14,6 +15,7 @@ function App() {
     <div>
       <Header />
       <HouseList />
+      <Footer />
     </div>
   );
 }

@@ -12,7 +12,7 @@ const Header = (props: Props) => {
   const [language, setLanguage] = useState('AZ');
 
   return (
-    <header className="bg-[#eae7dc] w-full h-24 flex justify-center p-3 sticky top-0 z-10">
+    <header className="bg-bg-home w-full h-24 flex justify-center p-3 sticky top-0 z-10">
       <div className="w-11/12 flex justify-between">
         <div className="flex">
           <img className="w-16 mt-2" src={logoImg} alt="" />
