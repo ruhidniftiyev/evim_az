@@ -9,7 +9,7 @@ function App() {
   }, []);
 
   return (
-    <div className="w-11/12 m-auto">
+    <div className="w-11/12 m-auto p-3">
       <HouseList />
     </div>
   );
