@@ -25,7 +25,7 @@ const HouseItem: React.FC<Props> = ({
   area,
 }) => {
   return (
-    <div className="mt-6 mr-6 border-2 border-gray-350 rounded-xl">
+    <div className="mt-6 mr-6 border-2 border-gray-350 rounded-xl cursor-pointer">
       <div>
         <img className="rounded-t-xl max-h-60 w-full" src={imageURL} alt="" />
       </div>
@@ -34,8 +34,8 @@ const HouseItem: React.FC<Props> = ({
           <p className="text-lg">{price} AZN</p>
         </div>
         <div className="flex h-7 relative">
-          <img className="w-5 h-3 align-middle relative top-1.5 mr-2" src={subway} alt="" />
-          <p className="align-middle">{address}</p>
+          <img className="w-6 h-3 align-middle absolute top-1.5 mr-2" src={subway} alt="" />
+          <p className="align-middle ml-8">{address}</p>
           <div className="flex ml-3">
             <img className="w-4" src={walkImg} alt="" />
             <p className="text-gray-400 text-xs mt-1 relative top-px ml-1 font-medium">
