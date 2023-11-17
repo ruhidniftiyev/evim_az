@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import HouseList from './components/HouseList';
 
 function App() {
   useEffect(() => {
@@ -9,8 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      <div className="">123</div>
-      <img src="http://housy.az/images/medium_quality/d9568d3f9c204b42bf1064c48e87223e" alt="" />
+      <HouseList />
     </div>
   );
 }

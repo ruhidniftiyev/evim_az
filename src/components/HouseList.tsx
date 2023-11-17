@@ -1,0 +1,14 @@
+import React from 'react';
+import { houseAPI } from '../services/HouseService';
+import HouseItem from './HouseItem';
+
+type Props = {};
+
+const HouseList = (props: Props) => {
+  const { data: houses } = houseAPI.useFetchAllHousesQuery('');
+  //   console.log(houses);
+
+  return <div>{houses && houses.map((house: any) => <HouseItem key={house.id} {...house} />)}</div>;
+};
+
+export default HouseList;
