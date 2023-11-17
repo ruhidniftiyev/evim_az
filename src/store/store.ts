@@ -1,9 +1,11 @@
 import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
 import houseSlice from './slices/HouseSlice';
 import { houseAPI } from '../services/HouseService';
+import langSlice from './slices/LanguageSlice';
 
 const rootReducer = combineReducers({
   houseSlice,
+  langSlice,
   [houseAPI.reducerPath]: houseAPI.reducer,
 });
 

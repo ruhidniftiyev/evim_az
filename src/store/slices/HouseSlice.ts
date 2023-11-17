@@ -5,9 +5,11 @@ const initialStore = {};
 const houseSlice = createSlice({
   name: 'house',
   initialState: initialStore,
-  reducers: {},
+  reducers: {
+    add: () => 1 + 1,
+  },
 });
 
 export default houseSlice.reducer;
 
-export const {} = houseSlice.actions;
+export const { add } = houseSlice.actions;
