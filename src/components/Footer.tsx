@@ -13,7 +13,7 @@ const Footer = (props: Props) => {
             <h1 className="header__logo-text font-semibold text-transparent text-3xl bg-clip-text text-white mt-5 ml-3">
               evim
             </h1>
-            <h1 className="header__logo-text font-semibold text-transparent text-3xl bg-clip-text text-regal-orange mt-5 ml-0">
+            <h1 className="header__logo-text font-semibold text-transparent text-3xl bg-clip-text text-regal-pink mt-5 ml-0">
               .az
             </h1>
           </div>
