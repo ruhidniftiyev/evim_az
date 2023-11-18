@@ -7,6 +7,7 @@ module.exports = {
         'regal-blue': '#00b7ff',
         'regal-pink': '#ea186d',
         'bg-home': '#eae7dc',
+        //Custom colors
       },
     },
   },
