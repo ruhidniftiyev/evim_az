@@ -10,8 +10,11 @@ const Footer = (props: Props) => {
         <div className="">
           <div className="flex">
             <img className="w-16" src={logo} alt="" />
-            <h1 className="header__logo-text font-semibold text-transparent text-3xl bg-clip-text bg-gradient-to-r from-regal-blue to-regal-pink mt-5 ml-3">
-              evim.az
+            <h1 className="header__logo-text font-semibold text-transparent text-3xl bg-clip-text text-white mt-5 ml-3">
+              evim
+            </h1>
+            <h1 className="header__logo-text font-semibold text-transparent text-3xl bg-clip-text text-regal-orange mt-5 ml-0">
+              .az
             </h1>
           </div>
           <div className="w-5/12 mt-4">
