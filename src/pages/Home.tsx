@@ -12,12 +12,17 @@ const Home = (props: Props) => {
 
   return (
     <div className="">
-      {isLoading && <LoadingPage />}
-      <Header />
-      <div className=" w-11/12 p-2 m-auto">
-        <HouseList />
-      </div>
-      <Footer />
+      {isLoading ? (
+        <LoadingPage />
+      ) : (
+        <>
+          <Header />
+          <div className="w-11/12 p-2 m-auto">
+            <HouseList />
+          </div>
+          <Footer />
+        </>
+      )}
     </div>
   );
 };
