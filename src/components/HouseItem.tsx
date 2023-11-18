@@ -27,6 +27,7 @@ const HouseItem: React.FC<Props> = ({
   wayToSubway,
   area,
 }) => {
+  
   const priceFormaterFunction = (price: number): any => {
     const stringPrice = String(price);
     const formatedPrice =

@@ -34,7 +34,7 @@ const Header = (props: Props) => {
             <p className="font-medium ml-2">Seçilmişlər</p>
           </div>
           <div className="flex cursor-pointer">
-            <p className="border-2 border-black rounded-full text-xl w-7 h-7 flex items-center justify-center font-medium hover:bg-regal-blue hover:text-white ">
+            <p className="border-2 border-white rounded-full text-xl w-7 h-7 flex items-center text-[#ffffff80] justify-center font-medium hover:bg-[#FFA500] hover:text-white ">
               +
             </p>
             <p className="ml-2 font-medium">Elan yerləşdir</p>

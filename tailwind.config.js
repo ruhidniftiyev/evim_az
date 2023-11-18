@@ -4,9 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'regal-blue': '#00b7ff',
-        'regal-pink': '#ea186d',
-        'bg-home': '#eae7dc',
+        'regal-orange': '#ffa500',
+        'bg-home': '#520590',
         //Custom colors
       },
     },
