@@ -1,8 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   favorites: [],
   isLoading: false,
+  loadingError: '',
 };
 
 const houseSlice = createSlice({
@@ -15,9 +16,13 @@ const houseSlice = createSlice({
     housesFetchingSuccess(state) {
       state.isLoading = false;
     },
+    housesFetchingError(state, action: PayloadAction<any>) {
+      state.isLoading = true;
+      state.loadingError = action.payload;
+    },
   },
 });
 
 export default houseSlice.reducer;
 
-export const { housesFetching, housesFetchingSuccess } = houseSlice.actions;
+export const { housesFetching, housesFetchingSuccess, housesFetchingError } = houseSlice.actions;
