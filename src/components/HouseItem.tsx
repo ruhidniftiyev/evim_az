@@ -41,7 +41,7 @@ const HouseItem: React.FC<Props> = ({
   };
 
   return (
-    <div className="mt-6 mr-6 border-2 border-gray-350 rounded-xl cursor-pointer sm:max-w-xs md:max-w-sm lg:max-w-md">
+    <div className="border-2 border-gray-350 rounded-xl cursor-pointer sm:max-w-xs md:max-w-sm lg:max-w-md">
       <div className="relative">
         <img
           className="rounded-t-xl w-full sm:h-48 md:h-64 lg:h-72 object-cover"
