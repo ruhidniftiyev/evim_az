@@ -6,7 +6,7 @@ module.exports = {
       colors: {
         'regal-orange': '#ffa500',
         'bg-home': '#520590',
-        'regal-pink': '#EA186D',
+        'regal-pink': '#ea186d',
         //Custom colors
       },
     },
