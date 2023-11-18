@@ -27,7 +27,7 @@ const HouseItem: React.FC<Props> = ({
   wayToSubway,
   area,
 }) => {
-  const priceFormaterFunction = (price: number): string => {
+  const priceFormaterFunction = (price: number): any => {
     const stringPrice = String(price);
     const formatedPrice =
       stringPrice.length === 6
@@ -41,9 +41,13 @@ const HouseItem: React.FC<Props> = ({
   };
 
   return (
-    <div className="mt-6 mr-6 border-2 border-gray-350 rounded-xl cursor-pointer sm:w-1/2 md:w-1/3 lg:w-1/4">
+    <div className="mt-6 mr-6 border-2 border-gray-350 rounded-xl cursor-pointer sm:max-w-xs md:max-w-sm lg:max-w-md">
       <div className="relative">
-        <img className="rounded-t-xl w-full" src={imageURL} alt="" />
+        <img
+          className="rounded-t-xl w-full sm:h-48 md:h-64 lg:h-72 object-cover"
+          src={imageURL}
+          alt=""
+        />
         <div
           className="bg-slate-100 w-9 h-9 rounded-full flex justify-center items-center absolute top-3 right-3"
           onClick={() => addToFavoritesFunc(id)}>
@@ -57,7 +61,7 @@ const HouseItem: React.FC<Props> = ({
         </div>
         <div className="flex h-7 relative">
           <img className="w-6 h-3 align-middle absolute top-1.5 mr-2" src={subway} alt="" />
-          <p className="align-middle ml-8">{address}</p>
+          <p className="align-middle ml-8  sm:text-sm lg:text-base">{address}</p>
           <div className="flex ml-3">
             <img className="w-4" src={walkImg} alt="" />
             <p className="text-gray-400 text-xs mt-1 relative top-px ml-1 font-medium">
