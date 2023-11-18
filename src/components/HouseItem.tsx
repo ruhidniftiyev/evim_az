@@ -4,7 +4,7 @@ import walkImg from '../assets/walk.svg';
 import floorImg from '../assets/floors.png';
 import roomsImg from '../assets/rooms.svg';
 import areaImg from '../assets/area.png';
-import favoritesImg from '../assets/favorites.svg';
+import favoritesImg from '../assets/blackfav.svg';
 
 type Props = {
   id: number;
@@ -27,7 +27,6 @@ const HouseItem: React.FC<Props> = ({
   wayToSubway,
   area,
 }) => {
-  
   const priceFormaterFunction = (price: number): any => {
     const stringPrice = String(price);
     const formatedPrice =

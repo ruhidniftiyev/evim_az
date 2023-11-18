@@ -11,8 +11,6 @@ const HouseList = (props: Props) => {
 
   const { data: houses, isLoading } = houseAPI.useFetchAllHousesQuery('');
 
-  console.log(isLoading);
-
   useEffect(() => {
     if (isLoading) {
       dispatch(housesFetching());
@@ -21,19 +19,12 @@ const HouseList = (props: Props) => {
     }
   }, [dispatch, isLoading, houses]);
 
-  // useEffect(() => {
-  //   if (houses) {
-  //     dispatch(housesFetchingSuccess());
-  //     console.log(12345);
-  //   } else {
-  //     console.log('Fetch');
-  //     dispatch(housesFetching());
-  //   }
-  // }, []);
-
   return (
-    <div className="grid grid-cols-4 gap-4">
-      {houses && houses.map((house: any) => <HouseItem key={house.id} {...house} />)}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      {houses &&
+        houses.map((house: any) => (
+          <HouseItem className="flex justify-center" key={house.id} {...house} />
+        ))}
     </div>
   );
 };
