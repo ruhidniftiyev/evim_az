@@ -1,24 +1,25 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { houseAPI } from '../services/HouseService';
 import HouseItem from './HouseItem';
 import { housesFetching, housesFetchingSuccess } from '../store/slices/HouseSlice';
 import { useAppDispatch } from '../hooks/redux-toolkit';
-import { useDispatch } from 'react-redux';
 
 type Props = {};
 
 const HouseList = (props: Props) => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   const { data: houses, isLoading } = houseAPI.useFetchAllHousesQuery('');
 
   console.log(isLoading);
 
-  if (isLoading) {
-    dispatch(housesFetching())
-  } else {
-    dispatch(housesFetchingSuccess())
-  }
+  useEffect(() => {
+    if (isLoading) {
+      dispatch(housesFetching());
+    } else if (houses) {
+      dispatch(housesFetchingSuccess());
+    }
+  }, [dispatch, isLoading, houses]);
 
   // useEffect(() => {
   //   if (houses) {
