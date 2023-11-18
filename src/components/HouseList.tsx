@@ -1,13 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { houseAPI } from '../services/HouseService';
 import HouseItem from './HouseItem';
 import { housesFetching, housesFetchingSuccess } from '../store/slices/HouseSlice';
 import { useAppDispatch } from '../hooks/redux-toolkit';
+import { useDispatch } from 'react-redux';
 
 type Props = {};
 
 const HouseList = (props: Props) => {
-  const dispatch = useAppDispatch();
+  const dispatch = useDispatch();
 
   const { data: houses, isLoading } = houseAPI.useFetchAllHousesQuery('');
 
