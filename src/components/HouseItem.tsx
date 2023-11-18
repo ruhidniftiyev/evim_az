@@ -5,6 +5,8 @@ import floorImg from '../assets/floors.png';
 import roomsImg from '../assets/rooms.svg';
 import areaImg from '../assets/area.png';
 import favoritesImg from '../assets/blackfav.svg';
+import { useAppDispatch } from '../hooks/redux-toolkit';
+import { addToFavoritesAction } from '../store/slices/FavoritesSlice';
 
 type Props = {
   id: number;
@@ -27,6 +29,8 @@ const HouseItem: React.FC<Props> = ({
   wayToSubway,
   area,
 }) => {
+  const dispatch = useAppDispatch();
+
   const priceFormaterFunction = (price: number): any => {
     const stringPrice = String(price);
     const formatedPrice =
@@ -37,7 +41,7 @@ const HouseItem: React.FC<Props> = ({
   };
 
   const addToFavoritesFunc = (id: number): void => {
-    console.log(id);
+    dispatch(addToFavoritesAction(id));
   };
 
   return (
@@ -49,7 +53,7 @@ const HouseItem: React.FC<Props> = ({
           alt=""
         />
         <div
-          className="bg-slate-100 w-9 h-9 rounded-full flex justify-center items-center absolute top-3 right-3"
+          className="bg-slate-100 w-9 h-9 rounded-full flex justify-center items-center absolute top-3 right-3 active:bg-slate-400"
           onClick={() => addToFavoritesFunc(id)}>
           <img className="w-5" src={favoritesImg} alt="" />
         </div>

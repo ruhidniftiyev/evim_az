@@ -5,6 +5,8 @@ import langImg from '../assets/lang.svg';
 import CustomSelect from './CustomSelect';
 import arrowDown from '../assets/arrow-down.svg';
 import arrowUp from '../assets/arrow-up.svg';
+import { FAVORITES_ROUTE } from '../utils/constants';
+import { Link } from 'react-router-dom';
 
 type Props = {};
 
@@ -32,10 +34,12 @@ const Header = (props: Props) => {
             </div>
             {/* <CustomSelect firstItem="Rus" secondItem="Azərbaycan" /> */}
           </div>
-          <div className="flex cursor-pointer">
-            <img className="w-6" src={favoritesImg} alt="" />
-            <p className="font-medium ml-2 flex items-center">Seçilmişlər</p>
-          </div>
+          <Link to={FAVORITES_ROUTE}>
+            <div className="flex cursor-pointer">
+              <img className="w-6" src={favoritesImg} alt="" />
+              <p className="font-medium ml-2 flex items-center">Seçilmişlər</p>
+            </div>
+          </Link>
           <div className="flex cursor-pointer">
             <p className="border-2 border-white rounded-full text-xl w-7 h-7 flex items-center  justify-center font-medium hover:bg-[#FFA500] hover:text-white ">
               +

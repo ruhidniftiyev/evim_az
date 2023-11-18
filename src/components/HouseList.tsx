@@ -6,20 +6,22 @@ import {
   housesFetchingError,
   housesFetchingSuccess,
 } from '../store/slices/HouseSlice';
-import { useAppDispatch } from '../hooks/redux-toolkit';
+import { useAppDispatch, useAppSelector } from '../hooks/redux-toolkit';
+import { fetchAllHousesAction } from '../store/slices/FavoritesSlice';
 
 type Props = {};
 
 const HouseList = (props: Props) => {
   const dispatch = useAppDispatch();
 
-  const { data: houses, error, isLoading } = houseAPI.useFetchAllHousesQuery('');
+  const { data: houses, isLoading, error } = houseAPI.useFetchAllHousesQuery('');
 
   useEffect(() => {
     if (isLoading) {
       dispatch(housesFetching());
     } else if (houses) {
       dispatch(housesFetchingSuccess());
+      dispatch(fetchAllHousesAction(houses));
     }
     if (error) {
       dispatch(housesFetchingError(error));

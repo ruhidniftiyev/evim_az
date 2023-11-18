@@ -1,7 +1,6 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  favorites: [],
   isLoading: false,
   loadingError: '',
 };

@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { useAppSelector } from '../hooks/redux-toolkit';
 
-type Props = {}
+type Props = {};
 
 const Favorites = (props: Props) => {
-  return (
-    <div>Favorites</div>
-  )
-}
+  const favoriteHouses = useAppSelector((store) => store.favoritesSlice.favorites);
 
-export default Favorites
+  console.log(favoriteHouses);
+
+  return <div>Favorites</div>;
+};
+
+export default Favorites;
