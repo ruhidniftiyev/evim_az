@@ -1,15 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialStore = {
+const initialState = {
   favorites: [],
+  isLoading: false,
 };
 
 const houseSlice = createSlice({
   name: 'house',
-  initialState: initialStore,
-  reducers: {},
+  initialState,
+  reducers: {
+    housesFetching(state) {
+      state.isLoading = true;
+    },
+    housesFetchingSuccess(state) {
+      state.isLoading = false;
+    },
+  },
 });
 
 export default houseSlice.reducer;
 
-export const {} = houseSlice.actions;
+export const { housesFetching, housesFetchingSuccess } = houseSlice.actions;
