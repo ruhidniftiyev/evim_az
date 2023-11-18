@@ -5,7 +5,7 @@ type Props = {};
 
 const Footer = (props: Props) => {
   return (
-    <footer className="bg-bg-home w-full max-h-xl h-96 mt-36 p-20">
+    <footer className="bg-bg-home w-full max-h-xl h-96 mt-36 p-20 border-t-stone-300 border-t-2">
       <div className="w-11/12 flex">
         <div className="">
           <div className="flex">
