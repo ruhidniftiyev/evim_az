@@ -2,12 +2,10 @@ import { combineReducers, configureStore, getDefaultMiddleware } from '@reduxjs/
 import { houseAPI } from '../services/HouseService';
 import houseSlice from './slices/HouseSlice';
 import langSlice from './slices/LanguageSlice';
-import favoritesSlice from './slices/FavoritesSlice';
 
 const rootReducer = combineReducers({
   houseSlice,
   langSlice,
-  favoritesSlice,
   [houseAPI.reducerPath]: houseAPI.reducer,
 });
 

@@ -4,22 +4,14 @@ import walkImg from '../assets/walk.svg';
 import floorImg from '../assets/floors.png';
 import roomsImg from '../assets/rooms.svg';
 import areaImg from '../assets/area.png';
-import favoritesImg from '../assets/blackfav.svg';
 import { useAppDispatch } from '../hooks/redux-toolkit';
-import { addToFavoritesAction } from '../store/slices/FavoritesSlice';
+import { addToFavoritesAction } from '../store/slices/HouseSlice';
+import { IHouse } from '../models/IHouse';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
+import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 
-type Props = {
-  id: number;
-  imageURL: string;
-  price: number;
-  floor: string;
-  rooms: number;
-  address: string;
-  wayToSubway: number;
-  area: number;
-};
-
-const HouseItem: React.FC<Props> = ({
+const HouseItem: React.FC<IHouse> = ({
   id,
   imageURL,
   price,
@@ -28,6 +20,7 @@ const HouseItem: React.FC<Props> = ({
   address,
   wayToSubway,
   area,
+  selected,
 }) => {
   const dispatch = useAppDispatch();
 
@@ -53,9 +46,13 @@ const HouseItem: React.FC<Props> = ({
           alt=""
         />
         <div
-          className="bg-slate-100 w-9 h-9 rounded-full flex justify-center items-center absolute top-3 right-3 active:bg-slate-400"
+          className="bg-slate-100 w-9 h-9 rounded-full flex justify-center items-center absolute top-3 right-3"
           onClick={() => addToFavoritesFunc(id)}>
-          <img className="w-5" src={favoritesImg} alt="" />
+          {selected ? (
+            <FontAwesomeIcon icon={solidHeart} size="lg" style={{ color: '#520590' }} />
+          ) : (
+            <FontAwesomeIcon icon={regularHeart} size="lg" style={{ color: '#000000' }} />
+          )}
         </div>
       </div>
 

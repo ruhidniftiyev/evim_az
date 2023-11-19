@@ -5,7 +5,7 @@ import langImg from '../assets/lang.svg';
 import CustomSelect from './CustomSelect';
 import arrowDown from '../assets/arrow-down.svg';
 import arrowUp from '../assets/arrow-up.svg';
-import { FAVORITES_ROUTE } from '../utils/constants';
+import { FAVORITES_ROUTE, HOME_ROUTE } from '../utils/constants';
 import { Link } from 'react-router-dom';
 
 type Props = {};
@@ -16,7 +16,8 @@ const Header = (props: Props) => {
   return (
     <header className="bg-bg-home w-full h-24 flex justify-center p-3 sticky top-0 z-10">
       <div className="w-11/12 flex flex-col sm:flex-row xl:text-xs justify-between items-center">
-        <div className="flex items-center">
+        <Link to={HOME_ROUTE}>
+        <div className="flex items-center cursor-pointer">
           <img className="w-10 mt-2 sm:w-16" src={logoImg} alt="" />
           <h1 className="header__logo-text font-semibold text-2xl sm:mt-1 sm:text-3xl bg-clip-text text-white mt-2 ml-3">
             evim
@@ -25,6 +26,7 @@ const Header = (props: Props) => {
             .az
           </h1>
         </div>
+        </Link>
         <div className="flex items-center w-11/12 sm:h-1/3 xl:w-1/3 justify-around text-xs text-white sm:text-sm lg:text-base xl:text-base">
           <div className="">
             <div className="flex">

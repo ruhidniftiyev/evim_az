@@ -1,3 +1,4 @@
+export const HOME_ROUTE = '/'
 export const HOUSE_ROUTE = '/house'
 export const FAVORITES_ROUTE = '/favorites'
 export const AUTH_ROUTE = '/auth'

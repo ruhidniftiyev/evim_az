@@ -1,33 +1,13 @@
-import React, { useEffect } from 'react';
-import { houseAPI } from '../services/HouseService';
+import React from 'react';
+import { FC } from 'react';
+import { IHouse } from '../models/IHouse';
 import HouseItem from './HouseItem';
-import {
-  housesFetching,
-  housesFetchingError,
-  housesFetchingSuccess,
-} from '../store/slices/HouseSlice';
-import { useAppDispatch, useAppSelector } from '../hooks/redux-toolkit';
-import { fetchAllHousesAction } from '../store/slices/FavoritesSlice';
 
-type Props = {};
+type HouseListProps = {
+  houses: any;
+};
 
-const HouseList = (props: Props) => {
-  const dispatch = useAppDispatch();
-
-  const { data: houses, isLoading, error } = houseAPI.useFetchAllHousesQuery('');
-
-  useEffect(() => {
-    if (isLoading) {
-      dispatch(housesFetching());
-    } else if (houses) {
-      dispatch(housesFetchingSuccess());
-      dispatch(fetchAllHousesAction(houses));
-    }
-    if (error) {
-      dispatch(housesFetchingError(error));
-    }
-  }, [dispatch, isLoading, houses, error]);
-
+const HouseList: FC<HouseListProps> = ({ houses }) => {
   return (
     houses && (
       <div>
