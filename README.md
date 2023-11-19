@@ -1,46 +1,59 @@
-# Getting Started with Create React App
+# Evim.az - Daşınmaz əmlak alqı-satqısı və kirayəsi
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to my React application that utilizes Webpack, Tailwind CSS, Redux Toolkit (RTK), RTK Query, TypeScript, and React Router!
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This project aims to showcase the integration of various powerful tools and libraries within a React application to ensure efficient development and seamless user experience.
 
-### `yarn start`
+## Prerequisites
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Before running this application, ensure you have the following installed:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Node.js
+- Yarn
+---
+## Getting Started
 
-### `yarn test`
+1. **Clone the repository:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ```bash
+   git clone https://github.com/ruhidniftiyev/house-test-task.git
+   cd your-project
+```
 
-### `yarn build`
+2.**Install dependencies**
+  ```bash
+  yarn install
+  ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+ 3.**Running the JSON Server**
+ This application might use a JSON server to simulate an API. You can start the JSON server as follows:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  ```bash
+  json-server --watch db.json --port 5000
+```
+Where:
+db.json is your JSON file with data, acting as a database. Make sure it's located in the root directory of your project.
+--port 3001 is the port on which the JSON server will run. You can use a different port if 5000 is already in use.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+4.**Running the App**
+Start the development server and run the application:
 
-### `yarn eject`
+  ```bash
+  yarn start
+  ```
+The application will launch in development mode at http://localhost:3000.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+5.**Building for Production**
+To generate a production build:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  ```bash
+  yarn build
+  ```
+This will create an optimized production build in the build folder.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Documentation
+For more in-depth information about each tool or library, refer to their respective documentation.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Thank you for checking out my React application! Happy coding!
