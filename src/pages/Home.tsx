@@ -29,7 +29,7 @@ const Home = (props: Props) => {
   return (
     <div className="">
       {isLoading && <LoadingPage />}
-      <Search />
+      {!isLoading && <Search />}
       <div className=" w-11/12 p-2 m-auto">
         <HouseList houses={allHousesSelected} />
       </div>
