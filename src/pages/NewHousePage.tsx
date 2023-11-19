@@ -4,6 +4,7 @@ import CustomBinarySelect from '../components/CustomBinarySelect';
 import { v4 as uuid4 } from 'uuid';
 import { houseAPI } from '../services/HouseService';
 import { IHouse } from '../models/IHouse';
+import { Link, useNavigate } from 'react-router-dom';
 
 type Props = {};
 
@@ -18,6 +19,8 @@ const NewHousePage = (props: Props) => {
   const [isSell, setIsSell] = useState<boolean>(true);
   const [nearTheSubway, setNearTheSubway] = useState<boolean>(true);
   const [wayToSubway, setWayToSubway] = useState<number | ''>('');
+
+  const navigate = useNavigate();
 
   const changeOwnerName = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setOwnerName(e.target.value);
@@ -77,22 +80,38 @@ const NewHousePage = (props: Props) => {
 
   const [createHouse, {}] = houseAPI.useCreateHouseMutation();
 
-  const createNewHouse = (e: React.FormEvent<HTMLFormElement>) => {
+  const createNewHouse = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    createHouse({
-      id: uuid4(),
-      ownerName,
-      imageURL,
-      floor,
-      price,
-      address,
-      rooms,
-      nearTheSubway,
-      wayToSubway,
-      area,
-      date: getTime(),
-      sell: isSell,
-    } as IHouse);
+    if (
+      address.trim() === '' ||
+      imageURL.trim() === '' ||
+      price === '' ||
+      floor.trim() === '' ||
+      rooms === '' ||
+      area === ' || '
+    ) {
+      console.log('Inputlar boşdur!');
+      return;
+    }
+
+    try {
+      (await createHouse({
+        id: uuid4(),
+        ownerName,
+        imageURL,
+        floor,
+        price,
+        address,
+        rooms,
+        nearTheSubway,
+        wayToSubway,
+        area,
+        date: getTime(),
+        sell: isSell,
+      } as IHouse)) && navigate('/');
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (

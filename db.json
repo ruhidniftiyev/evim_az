@@ -144,6 +144,48 @@
       "area": "90",
       "date": "00-10-2023 14:58",
       "sell": true
+    },
+    {
+      "id": "09582de0-e0e3-4da8-980b-60a4693ae660",
+      "ownerName": "Rəsul",
+      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUPmwIRhXczJPEyc-WBN3Bd_w1hJFoC6Q7WQ&usqp=CAU",
+      "floor": "3/12",
+      "price": 350000,
+      "address": "Gənclik",
+      "rooms": 2,
+      "nearTheSubway": true,
+      "wayToSubway": 5,
+      "area": "110",
+      "date": "00-10-2023 20:10",
+      "sell": true
+    },
+    {
+      "id": "ccac079e-804e-490b-b602-6e0089c9b3ee",
+      "ownerName": "Aydan",
+      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiDW1Wy3lcAZ2ggYzEwVKNjrsMrtvSmU9rL2K-Ct0cAUYgANI5r1KV7kpm-eYr9JXuytc&usqp=CAU",
+      "floor": "15/19",
+      "price": 400000,
+      "address": "28 May",
+      "rooms": 3,
+      "nearTheSubway": true,
+      "wayToSubway": 8,
+      "area": "180",
+      "date": "00-10-2023 20:16",
+      "sell": true
+    },
+    {
+      "id": "0a6b2cec-cd55-4250-b38b-a94fdbaf0638",
+      "ownerName": "Aqil",
+      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbA3MSG0VGMGMLnb_hDdBRWI7Pi1WI8cevDA&usqp=CAU",
+      "floor": "11/12",
+      "price": 220000,
+      "address": "Koroğlu",
+      "rooms": 3,
+      "nearTheSubway": true,
+      "wayToSubway": 16,
+      "area": "172",
+      "date": "01-10-2023 01:37",
+      "sell": true
     }
   ]
 }
