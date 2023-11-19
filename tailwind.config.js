@@ -17,9 +17,10 @@ module.exports = {
       },
       height: {
         100: '440px',
+        '95/100': '70vh',
       },
       borderWidth: {
-        'one': '1px',
+        one: '1px',
       },
     },
   },

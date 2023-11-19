@@ -10,11 +10,17 @@ const Favorites = (props: Props) => {
   console.log(favoriteHouses);
 
   return (
-    <div className="w-11/12 p-2 m-auto">
-      <div className='w-full flex justify-center my-5'>
+    <div className="w-11/12 h-95/100 p-2 m-auto">
+      <div className="w-full flex justify-center my-5">
         <h1 className="text-3xl font-semibold ">Seçilmişlər</h1>
       </div>
-      <HouseList houses={favoriteHouses} />
+      {favoriteHouses?.length > 0 ? (
+        <HouseList houses={favoriteHouses} />
+      ) : (
+        <div className="w-11/12 m-auto h-5/6 flex items-center justify-center">
+          <p>Bəyəndiyiniz evləri seçilmişlər siyahısına əlavə edin!</p>
+        </div>
+      )}
     </div>
   );
 };

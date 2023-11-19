@@ -5,7 +5,7 @@ import langImg from '../assets/lang.svg';
 import CustomSelect from './CustomSelect';
 import arrowDown from '../assets/arrow-down.svg';
 import arrowUp from '../assets/arrow-up.svg';
-import { FAVORITES_ROUTE, HOME_ROUTE } from '../utils/constants';
+import { ADD_HOUSE_ROUTE, FAVORITES_ROUTE, HOME_ROUTE } from '../utils/constants';
 import { Link } from 'react-router-dom';
 
 type Props = {};
@@ -42,12 +42,14 @@ const Header = (props: Props) => {
               <p className="font-bold ml-2 flex items-center">Seçilmişlər</p>
             </div>
           </Link>
-          <div className="flex cursor-pointer hover:bg-[#e5e7eb3b] h-10 items-center w-40 rounded-3xl justify-center">
-            <p className="border-2 border-white rounded-full text-xl w-7 h-7 flex items-center  justify-center font-medium ">
-              +
-            </p>
-            <p className="ml-2 font-bold flex items-center">Elan yerləşdir</p>
-          </div>
+          <Link to={ADD_HOUSE_ROUTE}>
+            <div className="flex cursor-pointer hover:bg-[#e5e7eb3b] h-10 items-center w-40 rounded-3xl justify-center">
+              <p className="border-2 border-white rounded-full text-xl w-7 h-7 flex items-center  justify-center font-medium ">
+                +
+              </p>
+              <p className="ml-2 font-bold flex items-center">Elan yerləşdir</p>
+            </div>
+          </Link>
         </div>
       </div>
     </header>
