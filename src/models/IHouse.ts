@@ -6,7 +6,7 @@ export interface IHouse {
   address: string;
   rooms: number;
   nearToSubway: boolean;
-  wayToSubway: number;
+  wayToSubway?: number;
   area: number;
   date: string;
   sell: boolean;
