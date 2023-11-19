@@ -10,6 +10,7 @@ import { IHouse } from '../models/IHouse';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
+import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
 const HouseItem: React.FC<IHouse> = ({
   id,
@@ -18,6 +19,7 @@ const HouseItem: React.FC<IHouse> = ({
   floor,
   rooms,
   address,
+  nearTheSubway,
   wayToSubway,
   area,
   selected,
@@ -25,15 +27,15 @@ const HouseItem: React.FC<IHouse> = ({
   const dispatch = useAppDispatch();
 
   const priceFormaterFunction = (price: number): any => {
-    const stringPrice = String(price);
-    const formatedPrice =
-      stringPrice.length === 6
-        ? stringPrice.substring(0, 3) + ' ' + stringPrice.substring(stringPrice.length - 3)
-        : '';
+    let formatedPrice = '';
+    for (let i = 1; i <= String(price).length; i++) {
+      const j = String(price).length - i;
+      formatedPrice = (!j || i % 3 ? String(price)[j] : ' ' + String(price)[j]) + formatedPrice;
+    }
     return formatedPrice;
   };
 
-  const addToFavoritesFunc = (id: number): void => {
+  const addToFavoritesFunc = (id: string | number): void => {
     dispatch(addToFavoritesAction(id));
   };
 
@@ -61,14 +63,31 @@ const HouseItem: React.FC<IHouse> = ({
           <p className="text-lg">{priceFormaterFunction(price)} AZN</p>
         </div>
         <div className="flex h-7 relative">
-          <img className="w-6 h-3 align-middle absolute top-1.5 mr-2" src={subway} alt="" />
-          <p className="align-middle ml-8  sm:text-sm lg:text-base">{address}</p>
-          <div className="flex ml-3">
-            <img className="w-4" src={walkImg} alt="" />
-            <p className="text-gray-400 text-xs mt-1 relative top-px ml-1 font-medium">
-              {wayToSubway} dəq
-            </p>
-          </div>
+          {nearTheSubway ? (
+            <>
+              <img className="w-6 h-3 align-middle absolute top-1.5 mr-2" src={subway} alt="" />
+              <p className="align-middle ml-8  sm:text-sm lg:text-base">{address}</p>
+            </>
+          ) : (
+            <>
+              <FontAwesomeIcon
+                className="mt-1 w-6"
+                icon={faMapMarkerAlt}
+                style={{
+                  color: '#000000',
+                }}
+              />
+              <p className="align-middle ml-2 sm:text-sm lg:text-base">{address}</p>
+            </>
+          )}
+          {nearTheSubway && (
+            <div className="flex ml-3">
+              <img className="w-4" src={walkImg} alt="" />
+              <p className="text-gray-400 text-xs mt-1 relative top-px ml-1 font-medium">
+                {wayToSubway} dəq
+              </p>
+            </div>
+          )}
         </div>
         <div className="flex justify-between text-sm pt-4">
           <div className="flex">

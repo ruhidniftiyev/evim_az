@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import CustomInput from '../components/CustomInput';
 import CustomBinarySelect from '../components/CustomBinarySelect';
+import { v4 as uuid4 } from 'uuid';
+import { houseAPI } from '../services/HouseService';
+import { IHouse } from '../models/IHouse';
 
 type Props = {};
 
@@ -11,7 +14,7 @@ const NewHousePage = (props: Props) => {
   const [floor, setFloor] = useState<string>('');
   const [rooms, setRooms] = useState<number | ''>('');
   const [area, setArea] = useState<number | string>('');
-  const [imageUrl, setImageUrl] = useState<string>('');
+  const [imageURL, setImageURL] = useState<string>('');
   const [isSell, setIsSell] = useState<boolean>(true);
   const [nearTheSubway, setNearTheSubway] = useState<boolean>(true);
   const [wayToSubway, setWayToSubway] = useState<number | ''>('');
@@ -41,7 +44,7 @@ const NewHousePage = (props: Props) => {
   };
 
   const changeImage = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setImageUrl(e.target.value);
+    setImageURL(e.target.value);
   };
 
   const changeCategoryClick = (e: React.MouseEvent<HTMLElement>) => {
@@ -60,17 +63,36 @@ const NewHousePage = (props: Props) => {
     setWayToSubway(e.target.valueAsNumber || '');
   };
 
+  const addZero = (timeNum: number) => {
+    return timeNum < 10 ? `0${timeNum}` : timeNum;
+  };
+
+  const getTime = () => {
+    const date = new Date();
+    const time = `${addZero(date.getDay())}-${addZero(
+      date.getMonth(),
+    )}-${date.getFullYear()} ${addZero(date.getHours())}:${addZero(date.getMinutes())}`;
+    return time;
+  };
+
+  const [createHouse, {}] = houseAPI.useCreateHouseMutation();
+
   const createNewHouse = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log({
+    createHouse({
+      id: uuid4(),
       ownerName,
-      area,
-      address,
+      imageURL,
+      floor,
       price,
-    });
-    console.log({
-      price: +price,
-    });
+      address,
+      rooms,
+      nearTheSubway,
+      wayToSubway,
+      area,
+      date: getTime(),
+      sell: isSell,
+    } as IHouse);
   };
 
   return (
@@ -80,8 +102,8 @@ const NewHousePage = (props: Props) => {
           <h1 className="font-extrabold text-3xl my-5">Yeni elan yarat</h1>
         </div>
         <div>
-          <form className='w-full' onSubmit={(e) => createNewHouse(e)}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-y-3 gap-x-20">
+          <form className="w-full" onSubmit={(e) => createNewHouse(e)}>
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-y-3 gap-x-20">
               <CustomInput
                 type="text"
                 value={ownerName}
@@ -105,13 +127,13 @@ const NewHousePage = (props: Props) => {
               />
               <CustomInput
                 type="text"
-                value={imageUrl}
+                value={imageURL}
                 label="Şəkil"
                 placeholder="Şəkil"
                 onChange={(e) => changeImage(e)}
               />
               <CustomInput
-                type="number"
+                type="text"
                 value={floor}
                 label="Mərtəbə"
                 placeholder="Mərtəbə"
@@ -154,7 +176,7 @@ const NewHousePage = (props: Props) => {
                 onChange={(e) => changeWayToSubway(e)}
               />
             </div>
-            <div className='w-full flex justify-end mt-5'>
+            <div className="w-full flex justify-center md:justify-end mt-5">
               <button className="bg-bg-home  text-white flex justify-center items-center border-2 border-[#e3e7eb] h-12 w-52 rounded-3xl p-4 text-md">
                 Əlavə etmək
               </button>

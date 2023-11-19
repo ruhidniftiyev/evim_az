@@ -116,6 +116,34 @@
       "area": 140,
       "date": "05-10-2023 03:14",
       "sell": true
+    },
+    {
+      "id": "b5abf00e-e40d-47d8-8c71-0fa328a341a6",
+      "ownerName": "Əkbər",
+      "imageURL": "https://0ba.ru/images/2021/01/06/petroglif-park1-0.jpg",
+      "floor": "5/13",
+      "price": 350000,
+      "address": "Neftçilər",
+      "rooms": 3,
+      "nearTheSubway": true,
+      "wayToSubway": 6,
+      "area": "120",
+      "date": "00-10-2023 14:55",
+      "sell": true
+    },
+    {
+      "id": "bd027a2c-dfa9-4145-8e0d-6bdd1d45170f",
+      "ownerName": "Rəhman",
+      "imageURL": "https://evdom.ru/wp-content/uploads/2018/10/sovremennyj-dizajn-odnokomnatnoj-kvartiry-01-1000x750.jpg",
+      "floor": "1/12",
+      "price": 120000,
+      "address": "20 Yanvar",
+      "rooms": 2,
+      "nearTheSubway": true,
+      "wayToSubway": 12,
+      "area": "90",
+      "date": "00-10-2023 14:58",
+      "sell": true
     }
   ]
 }

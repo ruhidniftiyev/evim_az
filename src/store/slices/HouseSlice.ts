@@ -20,10 +20,10 @@ const houseSlice = createSlice({
   name: 'house',
   initialState,
   reducers: {
-    addToFavoritesAction(state, action: PayloadAction<number>) {
+    addToFavoritesAction(state, action: PayloadAction<number | string>) {
       let selectedHouse: any = state.allHouses.find((el) => el.id === action.payload);
       let isWasSelected = state.favorites.filter((el) => el.id === action.payload);
-      if (isWasSelected.length === 0 && !selectedHouse.selected) {
+      if (isWasSelected.length === 0 && !selectedHouse?.selected) {
         state.favorites.push({ ...selectedHouse, selected: true });
       } else {
         state.favorites = state.favorites.map((el) =>
