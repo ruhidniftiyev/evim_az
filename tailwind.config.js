@@ -22,6 +22,9 @@ module.exports = {
       borderWidth: {
         one: '1px',
       },
+      width: {
+        cusw: '40vw',
+      },
     },
   },
   plugins: [],
