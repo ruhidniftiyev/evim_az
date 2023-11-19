@@ -5,6 +5,7 @@ import LoadingPage from './LoadingPage';
 import { useAppDispatch, useAppSelector } from '../hooks/redux-toolkit';
 import { fetchHouses } from '../store/thunks/HousesFetch';
 import { IHouse } from '../models/IHouse';
+import Search from '../components/Search';
 
 type Props = {};
 
@@ -28,6 +29,7 @@ const Home = (props: Props) => {
   return (
     <div className="">
       {isLoading && <LoadingPage />}
+      <Search />
       <div className=" w-11/12 p-2 m-auto">
         <HouseList houses={allHousesSelected} />
       </div>

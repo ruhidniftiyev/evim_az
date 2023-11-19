@@ -31,7 +31,7 @@ const Header = (props: Props) => {
           <div className="flex cursor-pointer hover:bg-[#e5e7eb3b] h-10 items-center w-28 rounded-3xl justify-center">
             <div className="flex">
               <img className="w-7 h-7" src={langImg} alt="" />
-              <p className="font-medium ml-2 flex items-center">{language}</p>
+              <p className="font-bold ml-2 flex items-center">{language}</p>
               <img className="ml-2 w-4" src={arrowDown} alt="" />
             </div>
             {/* <CustomSelect firstItem="Rus" secondItem="Azərbaycan" /> */}
@@ -39,14 +39,14 @@ const Header = (props: Props) => {
           <Link to={FAVORITES_ROUTE}>
             <div className="flex cursor-pointer hover:bg-[#e5e7eb3b] h-10 items-center w-40 rounded-3xl justify-center">
               <img className="w-6" src={favoritesImg} alt="" />
-              <p className="font-medium ml-2 flex items-center">Seçilmişlər</p>
+              <p className="font-bold ml-2 flex items-center">Seçilmişlər</p>
             </div>
           </Link>
           <div className="flex cursor-pointer hover:bg-[#e5e7eb3b] h-10 items-center w-40 rounded-3xl justify-center">
             <p className="border-2 border-white rounded-full text-xl w-7 h-7 flex items-center  justify-center font-medium ">
               +
             </p>
-            <p className="ml-2 font-medium flex items-center">Elan yerləşdir</p>
+            <p className="ml-2 font-bold flex items-center">Elan yerləşdir</p>
           </div>
         </div>
       </div>

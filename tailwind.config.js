@@ -4,10 +4,22 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        //Custom colors
         'regal-orange': '#ffa500',
         'bg-home': '#520590',
         'regal-pink': '#ea186d',
-        //Custom colors
+      },
+      backgroundImage: {
+        'house-background': "url('/src/assets/background.jpg)",
+      },
+      borderRadius: {
+        '8xl': '90px',
+      },
+      height: {
+        100: '440px',
+      },
+      borderWidth: {
+        'one': '1px',
       },
     },
   },

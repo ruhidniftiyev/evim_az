@@ -57,7 +57,7 @@ const HouseItem: React.FC<IHouse> = ({
       </div>
 
       <div className="p-4">
-        <div className="pb-4 font-medium">
+        <div className="pb-4 font-semibold">
           <p className="text-lg">{priceFormaterFunction(price)} AZN</p>
         </div>
         <div className="flex h-7 relative">
