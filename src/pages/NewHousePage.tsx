@@ -19,55 +19,55 @@ const NewHousePage = (props: Props) => {
   const [nearTheSubway, setNearTheSubway] = useState<boolean>(true);
   const [wayToSubway, setWayToSubway] = useState<number | ''>('');
 
-  const changeOwnerName = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeOwnerName = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setOwnerName(e.target.value);
   };
 
-  const changeArea = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeArea = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setArea(e.target.value);
   };
 
-  const changeAddress = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeAddress = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setAddress(e.target.value);
   };
 
-  const changePrice = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changePrice = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setPrice(e.target.valueAsNumber || '');
   };
 
-  const changeFloor = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeFloor = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setFloor(e.target.value);
   };
 
-  const changeRoomsQuality = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeRoomsQuality = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setRooms(e.target.valueAsNumber || '');
   };
 
-  const changeImage = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeImage = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setImageURL(e.target.value);
   };
 
-  const changeCategoryClick = (e: React.MouseEvent<HTMLElement>) => {
+  const changeCategoryClick = (e: React.MouseEvent<HTMLElement>): void => {
     if (e.currentTarget.innerText === 'Kirayə') {
       setIsSell(false);
     } else setIsSell(true);
   };
 
-  const changeSubwayStatus = (e: React.MouseEvent<HTMLElement>) => {
+  const changeSubwayStatus = (e: React.MouseEvent<HTMLElement>): void => {
     if (e.currentTarget.innerText === 'Xeyr') {
       setNearTheSubway(false);
     } else setNearTheSubway(true);
   };
 
-  const changeWayToSubway = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const changeWayToSubway = (e: React.ChangeEvent<HTMLInputElement>): void => {
     setWayToSubway(e.target.valueAsNumber || '');
   };
 
-  const addZero = (timeNum: number) => {
+  const addZero = (timeNum: number): string | number => {
     return timeNum < 10 ? `0${timeNum}` : timeNum;
   };
 
-  const getTime = () => {
+  const getTime = (): string => {
     const date = new Date();
     const time = `${addZero(date.getDay())}-${addZero(
       date.getMonth(),

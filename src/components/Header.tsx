@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 type Props = {};
 
 const Header = (props: Props) => {
-  const [language, setLanguage] = useState('AZ');
+  const [language, setLanguage] = useState<string>('AZ');
 
   return (
     <header className="bg-bg-home w-full h-24 flex justify-center p-3 sticky top-0 z-10">
