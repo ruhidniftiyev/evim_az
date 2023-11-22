@@ -7,11 +7,29 @@ import arrowDown from '../assets/arrow-down.svg';
 import arrowUp from '../assets/arrow-up.svg';
 import { ADD_HOUSE_ROUTE, FAVORITES_ROUTE, HOME_ROUTE } from '../utils/constants';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import { TRANSLATION_AZ } from '../locales/az/Translation';
+import { TRANSLATION_RU } from '../locales/ru/Translation';
+
+i18n.use(initReactI18next).init({
+  resources: {
+    ru: TRANSLATION_RU,
+    az: TRANSLATION_AZ,
+  },
+  lng: 'az',
+  interpolation: {
+    escapeValue: false,
+  },
+});
 
 type Props = {};
 
 const Header = (props: Props) => {
   const [language, setLanguage] = useState<string>('AZ');
+
+  const { t } = useTranslation();
 
   return (
     <header className="bg-bg-home w-full h-24 flex justify-center p-3 sticky top-0 z-10">
@@ -29,9 +47,9 @@ const Header = (props: Props) => {
         </Link>
         <div className="flex items-center w-11/12 sm:h-1/3 xl:w-1/3 justify-around text-xs text-white sm:text-sm lg:text-base xl:text-base">
           <div className="flex cursor-pointer hover:bg-[#e5e7eb3b] h-10 items-center w-28 rounded-3xl justify-center">
-            <div className="flex">
+            <div onClick={() => i18n.changeLanguage('ru')} className="flex">
               <img className="w-7 h-7" src={langImg} alt="" />
-              <p className="font-bold ml-2 flex items-center">{language}</p>
+              <p className="font-bold ml-2 flex items-center">AZ</p>
               <img className="ml-2 w-4" src={arrowDown} alt="" />
             </div>
             {/* <CustomSelect firstItem="Rus" secondItem="Azərbaycan" /> */}
@@ -39,7 +57,7 @@ const Header = (props: Props) => {
           <Link to={FAVORITES_ROUTE}>
             <div className="flex cursor-pointer hover:bg-[#e5e7eb3b] h-10 items-center w-40 rounded-3xl justify-center">
               <img className="w-6" src={favoritesImg} alt="" />
-              <p className="font-bold ml-2 flex items-center">Seçilmişlər</p>
+              <p className="font-bold ml-2 flex items-center">{t('text.favorites')}</p>
             </div>
           </Link>
           <Link to={ADD_HOUSE_ROUTE}>
@@ -47,7 +65,7 @@ const Header = (props: Props) => {
               <p className="border-2 border-white rounded-full text-xl w-7 h-7 flex items-center  justify-center font-medium ">
                 +
               </p>
-              <p className="ml-2 font-bold flex items-center">Elan yerləşdir</p>
+              <p className="ml-2 font-bold flex items-center">{t('text.add')}</p>
             </div>
           </Link>
         </div>
