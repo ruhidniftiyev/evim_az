@@ -13,17 +13,6 @@ import { initReactI18next } from 'react-i18next';
 import { TRANSLATION_AZ } from '../locales/az/Translation';
 import { TRANSLATION_RU } from '../locales/ru/Translation';
 
-i18n.use(initReactI18next).init({
-  resources: {
-    RU: TRANSLATION_RU,
-    AZ: TRANSLATION_AZ,
-  },
-  lng: 'AZ',
-  interpolation: {
-    escapeValue: false,
-  },
-});
-
 type Props = {};
 
 const Header = (props: Props) => {
