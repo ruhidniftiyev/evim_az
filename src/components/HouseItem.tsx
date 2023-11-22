@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart as solidHeart } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as regularHeart } from '@fortawesome/free-regular-svg-icons';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 
 const HouseItem: React.FC<IHouse> = ({
   id,
@@ -25,6 +26,8 @@ const HouseItem: React.FC<IHouse> = ({
   selected,
 }) => {
   const dispatch = useAppDispatch();
+
+  const { t } = useTranslation();
 
   const priceFormaterFunction = (price: number): any => {
     let formatedPrice = '';
@@ -96,7 +99,14 @@ const HouseItem: React.FC<IHouse> = ({
           </div>
           <div className="flex">
             <img className="w-5 mr-1" src={roomsImg} alt="" />
-            <p>{rooms} otaq</p>
+            <p>
+              {rooms}{' '}
+              {rooms === 1
+                ? t('items.rooms1')
+                : rooms === 2 || rooms === 3 || rooms === 4
+                ? t('items.rooms234')
+                : t('items.rooms5')}
+            </p>
           </div>
           <div className="flex">
             <img className="w-5 mr-1" src={areaImg} alt="" />

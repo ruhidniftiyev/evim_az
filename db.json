@@ -138,7 +138,7 @@
       "floor": "1/12",
       "price": 120000,
       "address": "20 Yanvar",
-      "rooms": 2,
+      "rooms": 1,
       "nearTheSubway": true,
       "wayToSubway": 12,
       "area": "90",

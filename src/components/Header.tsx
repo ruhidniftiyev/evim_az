@@ -9,9 +9,6 @@ import { ADD_HOUSE_ROUTE, FAVORITES_ROUTE, HOME_ROUTE } from '../utils/constants
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import { TRANSLATION_AZ } from '../locales/az/Translation';
-import { TRANSLATION_RU } from '../locales/ru/Translation';
 
 type Props = {};
 
@@ -20,7 +17,7 @@ const Header = (props: Props) => {
 
   const { t } = useTranslation();
 
-  const changer = (current: string) => {
+  const changerLanguage = (current: string) => {
     return current === 'AZ' ? 'RU' : 'AZ';
   };
 
@@ -40,7 +37,9 @@ const Header = (props: Props) => {
         </Link>
         <div className="flex items-center w-11/12 sm:h-1/3 xl:w-1/3 justify-around text-xs text-white sm:text-sm lg:text-base xl:text-base">
           <div className="flex cursor-pointer hover:bg-[#e5e7eb3b] h-10 items-center w-28 rounded-3xl justify-center">
-            <div onClick={() => i18n.changeLanguage(changer(t('buttons.lang')))} className="flex">
+            <div
+              onClick={() => i18n.changeLanguage(changerLanguage(t('buttons.lang')))}
+              className="flex">
               <img className="w-7 h-7" src={langImg} alt="" />
               <p className="font-bold ml-2 flex items-center">AZ</p>
               <img className="ml-2 w-4" src={arrowDown} alt="" />
