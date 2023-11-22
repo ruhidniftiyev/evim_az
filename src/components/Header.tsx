@@ -31,6 +31,10 @@ const Header = (props: Props) => {
 
   const { t } = useTranslation();
 
+  const changer = (current: string) => {
+    return current === 'az' ? 'ru' : 'az';
+  };
+
   return (
     <header className="bg-bg-home w-full h-24 flex justify-center p-3 sticky top-0 z-10">
       <div className="w-11/12 flex flex-col sm:flex-row xl:text-xs justify-between items-center">
@@ -47,7 +51,7 @@ const Header = (props: Props) => {
         </Link>
         <div className="flex items-center w-11/12 sm:h-1/3 xl:w-1/3 justify-around text-xs text-white sm:text-sm lg:text-base xl:text-base">
           <div className="flex cursor-pointer hover:bg-[#e5e7eb3b] h-10 items-center w-28 rounded-3xl justify-center">
-            <div onClick={() => i18n.changeLanguage('ru')} className="flex">
+            <div onClick={() => i18n.changeLanguage(changer(t('buttons.lang')))} className="flex">
               <img className="w-7 h-7" src={langImg} alt="" />
               <p className="font-bold ml-2 flex items-center">AZ</p>
               <img className="ml-2 w-4" src={arrowDown} alt="" />

@@ -9,7 +9,7 @@ export const TRANSLATION_AZ = {
 
         },
         buttons: {
-            lang: 'AZ'
+            lang: 'az'
         }
     }
 }
