@@ -15,10 +15,10 @@ import { TRANSLATION_RU } from '../locales/ru/Translation';
 
 i18n.use(initReactI18next).init({
   resources: {
-    ru: TRANSLATION_RU,
-    az: TRANSLATION_AZ,
+    RU: TRANSLATION_RU,
+    AZ: TRANSLATION_AZ,
   },
-  lng: 'az',
+  lng: 'AZ',
   interpolation: {
     escapeValue: false,
   },
@@ -32,7 +32,7 @@ const Header = (props: Props) => {
   const { t } = useTranslation();
 
   const changer = (current: string) => {
-    return current === 'az' ? 'ru' : 'az';
+    return current === 'AZ' ? 'RU' : 'AZ';
   };
 
   return (

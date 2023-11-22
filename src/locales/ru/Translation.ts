@@ -8,7 +8,7 @@ export const TRANSLATION_RU = {
       resultText: 'результатов найдено!',
     },
     buttons: {
-      lang: 'ru',
+      lang: 'RU',
     },
   },
 };
