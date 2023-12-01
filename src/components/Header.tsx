@@ -5,7 +5,7 @@ import langImg from '../assets/lang.svg';
 import CustomSelect from './CustomSelect';
 import arrowDown from '../assets/arrow-down.svg';
 import arrowUp from '../assets/arrow-up.svg';
-import { ADD_HOUSE_ROUTE, FAVORITES_ROUTE, HOME_ROUTE } from '../utils/constants';
+import { ADD_HOUSE_ROUTE, AUTH_ROUTE, FAVORITES_ROUTE, HOME_ROUTE } from '../utils/constants';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import i18n from 'i18next';
@@ -35,7 +35,7 @@ const Header = (props: Props) => {
             </h1>
           </div>
         </Link>
-        <div className="flex items-center w-11/12 sm:h-1/3 xl:w-1/3 justify-around text-xs text-white sm:text-sm lg:text-base xl:text-base">
+        <div className="flex items-center w-11/12 sm:h-1/3 xl:w-2/3 justify-around text-xs text-white sm:text-sm lg:text-base xl:text-base">
           <div className="flex cursor-pointer hover:bg-[#e5e7eb3b] h-10 items-center w-28 rounded-3xl justify-center">
             <div
               onClick={() => i18n.changeLanguage(changerLanguage(t('buttons.lang')))}
@@ -58,6 +58,11 @@ const Header = (props: Props) => {
                 +
               </p>
               <p className="ml-2 font-bold flex items-center">{t('text.add')}</p>
+            </div>
+          </Link>
+          <Link to={AUTH_ROUTE}>
+            <div className="flex cursor-pointer hover:bg-[#e5e7eb3b] h-10 items-center w-40 rounded-3xl justify-center">
+              <p className="ml-2 font-bold flex items-center">{t('text.auth')}</p>
             </div>
           </Link>
         </div>

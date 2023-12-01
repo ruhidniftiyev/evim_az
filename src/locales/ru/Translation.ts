@@ -3,6 +3,7 @@ export const TRANSLATION_RU = {
     text: {
       favorites: 'Избранные',
       add: 'Создать',
+      auth: 'Войти',
       welcomeTextUp: 'Выгодные и',
       welcomeTextDown: 'Надёжные дома',
       resultText: 'результатов найдено!',

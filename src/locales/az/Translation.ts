@@ -3,6 +3,7 @@ export const TRANSLATION_AZ = {
     text: {
       favorites: 'Seçilmişlər',
       add: 'Elan yaratmaq',
+      auth: 'Daxil ol',
       welcomeTextUp: 'Sərfəli və',
       welcomeTextDown: 'Zəmanətli evlər',
       resultText: 'nəticə tapıldı!',
