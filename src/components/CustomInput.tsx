@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FC } from 'react';
 
 type CustomInputProps = {
-  type: 'text' | 'number'
+  type: 'text' | 'number' | 'password';
   label: string;
   placeholder: string;
   value: string | number;

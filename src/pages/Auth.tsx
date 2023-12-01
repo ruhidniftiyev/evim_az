@@ -1,11 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react';
+import CustomInput from '../components/CustomInput';
 
-type Props = {}
+type Props = {};
 
 const Auth = (props: Props) => {
-  return (
-    <div>Auth</div>
-  )
-}
+  const [email, setEmail] = useState('');
+  const [password, setPasswort] = useState('');
 
-export default Auth
+  const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPasswort(e.target.value);
+  };
+
+  return (
+    <div>
+      <form>
+        <CustomInput
+          placeholder="Your email"
+          type="text"
+          value={email}
+          label="E-mail"
+          onChange={handleEmailChange}
+        />
+        <CustomInput
+          placeholder="Your password"
+          type="password"
+          value={password}
+          label="Password"
+          onChange={handlePasswordChange}
+        />
+      </form>
+    </div>
+  );
+};
+
+export default Auth;
