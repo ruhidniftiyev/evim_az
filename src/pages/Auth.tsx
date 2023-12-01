@@ -16,8 +16,9 @@ const Auth = (props: Props) => {
   };
 
   return (
-    <div>
-      <form>
+    <div className="flex justify-center items-center h-100 flex-col">
+      <h2 className="font-semibold text-2xl">Daxil ol</h2>
+      <form className="w-11/12 flex flex-col justify-center items-center">
         <CustomInput
           placeholder="Your email"
           type="text"
@@ -32,6 +33,11 @@ const Auth = (props: Props) => {
           label="Password"
           onChange={handlePasswordChange}
         />
+        <div className="w-full flex justify-center mt-5">
+          <button className="bg-bg-home  text-white flex justify-center items-center border-2 border-[#e3e7eb] h-12 w-52 rounded-3xl p-4 text-md">
+            Daxil ol
+          </button>
+        </div>
       </form>
     </div>
   );
