@@ -17,7 +17,7 @@ const Auth = (props: Props) => {
 
   return (
     <div className="flex justify-center items-center h-100 flex-col">
-      <h2 className="font-semibold text-2xl">Daxil ol</h2>
+      <h2 className="font-semibold text-2xl">Giriş</h2>
       <form className="w-11/12 flex flex-col justify-center items-center">
         <CustomInput
           placeholder="Your email"
