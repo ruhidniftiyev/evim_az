@@ -3,6 +3,7 @@ import Favorites from '../pages/Favorites';
 import Home from '../pages/Home';
 import HousePage from '../pages/HousePage';
 import NewHousePage from '../pages/NewHousePage';
+import Registration from '../pages/Registration';
 import {
   ADD_HOUSE_ROUTE,
   AUTH_ROUTE,
@@ -31,5 +32,9 @@ export const publicRoutes = [
   {
     path: AUTH_ROUTE,
     Component: Auth,
+  },
+  {
+    path: REGISTRATION_ROUTE,
+    Component: Registration,
   },
 ];
