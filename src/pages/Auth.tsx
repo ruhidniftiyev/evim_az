@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import CustomInput from '../components/CustomInput';
+import { REGISTRATION_ROUTE } from '../utils/constants';
+import { Link } from 'react-router-dom';
 
 type Props = {};
 
@@ -16,7 +18,7 @@ const Auth = (props: Props) => {
   };
 
   return (
-    <div className="flex justify-center items-center h-100 flex-col">
+    <div className="flex justify-center items-center h-100 w-full flex-col">
       <h2 className="font-semibold text-2xl">Giriş</h2>
       <form className="w-11/12 flex flex-col justify-center items-center">
         <CustomInput
@@ -39,6 +41,12 @@ const Auth = (props: Props) => {
           </button>
         </div>
       </form>
+      <div className="flex justify-between w-64 mt-2">
+        <p>Səhifəniz yoxdur?</p>
+        <Link to={REGISTRATION_ROUTE}>
+          <p className='hover:underline'>Qeydiyyat</p>
+        </Link>
+      </div>
     </div>
   );
 };
