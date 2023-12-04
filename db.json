@@ -186,6 +186,20 @@
       "area": "172",
       "date": "01-10-2023 01:37",
       "sell": true
+    },
+    {
+      "id": "1ed13a2e-2394-4977-9124-337c6735e74b",
+      "ownerName": "Ruhid",
+      "imageURL": "https://vipemlak.az/uploads/news/15506653482293467925c6d468426d70.jpg",
+      "floor": "3/9",
+      "price": 110000,
+      "address": "Qarayev",
+      "rooms": 2,
+      "nearTheSubway": true,
+      "wayToSubway": 5,
+      "area": "100",
+      "date": "00-11-2023 02:11",
+      "sell": true
     }
   ],
   "users": []
