@@ -10,6 +10,7 @@ import {
   FAVORITES_ROUTE,
   HOME_ROUTE,
   HOUSE_ROUTE,
+  REGISTRATION_ROUTE,
 } from '../utils/constants';
 
 export const publicRoutes = [

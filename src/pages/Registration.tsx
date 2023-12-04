@@ -17,7 +17,7 @@ const Registration = (props: Props) => {
 
   return (
     <div className="flex justify-center items-center h-100 flex-col">
-      <h2 className="font-semibold text-2xl">Daxil ol</h2>
+      <h2 className="font-semibold text-2xl">Qeydiyyat</h2>
       <form className="w-11/12 flex flex-col justify-center items-center">
         <CustomInput
           placeholder="Your email"
@@ -35,7 +35,7 @@ const Registration = (props: Props) => {
         />
         <div className="w-full flex justify-center mt-5">
           <button className="bg-bg-home  text-white flex justify-center items-center border-2 border-[#e3e7eb] h-12 w-52 rounded-3xl p-4 text-md">
-            Daxil ol
+            Qeydiyyatdan keç
           </button>
         </div>
       </form>
