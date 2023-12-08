@@ -10,3 +10,4 @@ export const fetchHouses = createAsyncThunk('house/fetchAll', async (_, thunkAPI
     return thunkAPI.rejectWithValue('Uğursuz cəhd!');
   }
 });
+
