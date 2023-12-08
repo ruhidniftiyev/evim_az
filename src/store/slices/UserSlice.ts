@@ -1,5 +1,5 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
-import { postUser } from '../thunks/UsersFetch';
+import { fetchUser, postUser } from '../thunks/UsersFetch';
 
 const initialState = {
   allUsers: [],
@@ -25,7 +25,10 @@ const userSlice = createSlice({
       .addCase(postUser.rejected, (state, action: PayloadAction<any>) => {
         state.isLoading = false;
         state.loadingError = action.payload;
-      });
+      })
+      .addCase(fetchUser.pending, (state) => {
+          
+      })
   },
 });
 

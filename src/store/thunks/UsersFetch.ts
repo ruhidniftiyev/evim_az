@@ -10,7 +10,7 @@ export const postUser = createAsyncThunk('user/postUser', async (userData: any, 
   }
 });
 
-export const getUser = createAsyncThunk('user/fetchUser', async (_, thunkAPI) => {
+export const fetchUser = createAsyncThunk('user/fetchUser', async (_, thunkAPI) => {
   try {
     const response = await axios.get<any>('http://localhost:5000/users');
     return response.data;
