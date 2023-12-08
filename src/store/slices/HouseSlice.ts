@@ -42,7 +42,7 @@ const houseSlice = createSlice({
       .addCase(fetchHouses.fulfilled, (state, action: PayloadAction<IHouse[]>) => {
         state.isLoading = false;
         state.loadingError = '';
-        state.allHouses = action.payload; // Используем иммутабельное обновление
+        state.allHouses = action.payload;
       })
       .addCase(fetchHouses.rejected, (state, action: PayloadAction<any>) => {
         state.isLoading = false;
