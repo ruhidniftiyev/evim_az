@@ -202,5 +202,11 @@
       "sell": true
     }
   ],
-  "users": []
+  "users": [
+    {
+      "email": "noname@gmail.com",
+      "password": "Salam123",
+      "id": 6
+    }
+  ]
 }

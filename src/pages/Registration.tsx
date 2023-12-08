@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import CustomInput from '../components/CustomInput';
+import { postUser } from '../store/thunks/UsersFetch';
+import { useAppDispatch } from '../hooks/redux-toolkit';
 
 type Props = {};
 
 const Registration = (props: Props) => {
+  const dispatch = useAppDispatch();
+
   const [email, setEmail] = useState('');
   const [password, setPasswort] = useState('');
 
@@ -15,10 +19,15 @@ const Registration = (props: Props) => {
     setPasswort(e.target.value);
   };
 
+  const addNewUser = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    dispatch(postUser({ email, password }));
+  };
+
   return (
     <div className="flex justify-center items-center h-100 flex-col">
       <h2 className="font-semibold text-2xl">Qeydiyyat</h2>
-      <form className="w-11/12 flex flex-col justify-center items-center">
+      <form onSubmit={addNewUser} className="w-11/12 flex flex-col justify-center items-center">
         <CustomInput
           placeholder="Your email"
           type="text"
