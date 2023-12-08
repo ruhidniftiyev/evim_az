@@ -9,3 +9,12 @@ export const postUser = createAsyncThunk('user/postUser', async (userData: any, 
     return thunkAPI.rejectWithValue('Uğursuz cəhd!');
   }
 });
+
+export const getUser = createAsyncThunk('user/fetchUser', async (_, thunkAPI) => {
+  try {
+    const response = await axios.get<any>('http://localhost:5000/users');
+    return response.data;
+  } catch (e) {
+    return thunkAPI.rejectWithValue('Uğursuz cəhd!');
+  }
+});
